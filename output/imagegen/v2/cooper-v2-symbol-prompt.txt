@@ -1,0 +1,7 @@
+Use case: precise-object-edit
+Asset type: standalone logo master extracted from the supplied Cooper brand identity concept.
+Input image: the supplied image is the approved design reference for geometry and colors, not a background to retain.
+Primary request: Isolate and faithfully redraw the SAME large folded C symbol shown at the left of the supplied image, as one standalone high-resolution brand mark. Preserve its exact identity: a vivid indigo folded vertical ribbon forms the left spine and lower right-facing arm, while a warm apricot-orange folded top plane forms the upper arm. Preserve the inner orange fold, the organic fold curves, the open right-side C negative space, and the proportions. It resembles a folded file holder viewed at a slight angle. Do not redesign the shape. The mark should occupy about 74 percent of the square canvas height and be optically centered with equal whitespace.
+Style: clean vector-friendly brand art; smooth precise edges; restrained shading only within the folds to explain the overlapping planes; no photorealistic texture, drop shadow, pedestal, object below the symbol, or extruded icon tile.
+Background: plain, completely uniform pure white. Only the single isolated C symbol. No text, no wordmark, no labels, no secondary logos, no app tile, no surrounding border, no watermark.
+Colors: saturated indigo blue and warm apricot orange, exactly like the supplied concept. Do not introduce teal, mint, navy, or a new palette. Keep the top orange, spine and bottom blue.

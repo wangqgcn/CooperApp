@@ -1,0 +1,8 @@
+// 签名设置：使用个人 Apple ID，由 Xcode 自动管理证书和描述文件。
+// File Provider 扩展必须用带 Team ID 的证书签名，"Sign to Run Locally" 不行。
+//
+// 在 Xcode → Settings → Accounts 登录 Apple ID 后，把 Team ID（10 位字母数字）填到下面。
+// 改完直接在 Xcode 里重新编译即可，不用重新生成工程。
+
+CODE_SIGN_STYLE = Automatic
+DEVELOPMENT_TEAM = 35B8D779M2

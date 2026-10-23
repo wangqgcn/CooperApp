@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# 构建产物
+.build/
+DerivedData/
+*.dmg
+output/releases/
+
+# Xcode / SwiftPM 用户数据
+xcuserdata/
+*.xcuserstate
+.swiftpm/
+
+# IDE
+.idea/
+
+# 由 xcodegen generate 根据 project.yml 生成
+Cooper.xcodeproj/
+App/Info.plist
+App/*.entitlements
+FileProvider/Info.plist
+FileProvider/*.entitlements
+
+# 可由 output/imagegen 重新生成的压缩包
+output/imagegen/*.zip

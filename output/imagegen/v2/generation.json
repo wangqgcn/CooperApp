@@ -1,0 +1,11 @@
+{
+  "version": "v2",
+  "model_alias": "gpt-image-2.5-sunburst",
+  "native_symbol_size": [
+    1254,
+    1254
+  ],
+  "method": "imagegen CLI generate + edit; raster cleanup and layout",
+  "status": "adopted",
+  "application_asset_export": "python3 scripts/update-brand-assets.py"
+}

@@ -1,0 +1,14 @@
+Use case: logo-brand
+Asset type: a complete, premium logo redesign presentation for Cooper, a macOS cloud storage drive application.
+
+Primary request: Create a memorable and distinctive new brand mark that combines the letter C with the IDEA of a folded open folder. The previous version looked too much like an ordinary system folder and used dull dark navy with mint. This must feel like an ownable software brand rather than an operating-system file icon.
+
+Design direction: FOLDED C. Explore a bold, compact letter C constructed from two interlocking broad folded planes. Crisp diagonal cuts and one deliberate overlapping fold are its distinctive signature. The negative space and open right side clearly read C. The overlapping planes subtly suggest the front and back of an open file holder, with no literal folder tab. Strong flat graphic silhouette, optically balanced, softened geometric corners, substantial strokes, clean negative space. The mark should remain memorable in solid black and at 24 pixels. No detached connector square. No ordinary rounded rectangular folder outline. No arrows, checkmarks, clouds, chain links, infinity symbol, padlocks, cylinders, or enclosing hexagon. Do not draw a G.
+
+References as principles only: Dropbox's simple modular construction, Google Drive's clearly separated planes, OneDrive's compact recognizable mass, Synology Drive's polished desktop-app presence. Create an original C silhouette; do not copy their logos, cloud shapes, open-box diamonds, triangles, or exact color combinations. Do not display any reference brand logo or name.
+
+Palette: saturated luminous indigo #485BFF as the dominant color, warm apricot orange #FF965F as a smaller folded plane, near-black #202238 for the wordmark, warm-white #FAFAF8 background. Orange is an intentional part of the folded geometry, not a decorative dot. Confident, clear, uplifting, not corporate dark navy or mint. Flat colors for the main logo. Very subtle depth is acceptable only for the application tile.
+
+Composition: A sophisticated landscape brand identity board with generous whitespace. On the left, the large exact new symbol beside the word "Cooper" in a confident contemporary geometric semibold sans-serif. On the right, a beautiful front-facing macOS app tile with a white rounded-square base and THE SAME symbol at large size. Below, a discreet small row showing this same mark as a standalone colored logo, a single-color black logo, and a white logo on indigo, demonstrating real silhouette consistency. Keep all versions structurally identical. One coherent identity, not multiple competing logo concepts.
+
+Text (verbatim): "Cooper" only. No other labels, no color-code text, no captions, no slogans, no watermarks, no typography specimens. Fully opaque warm-white background. The presentation should look like the final work of an expert identity designer, not an AI mood board. Prioritize a distinctive C silhouette over visual effects.

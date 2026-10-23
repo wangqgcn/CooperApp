@@ -1,0 +1,105 @@
+name: Cooper
+
+options:
+  bundleIdPrefix: app.getcooper
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+# 签名相关设置放在 Config/Signing.xcconfig，改签名不需要重新生成工程
+configFiles:
+  Debug: Config/Signing.xcconfig
+  Release: Config/Signing.xcconfig
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_HARDENED_RUNTIME: YES
+    # App Group 必须以 Team ID 开头（macOS 15 起不这样会弹授权框）
+    COOPER_APP_GROUP: $(TeamIdentifierPrefix)app.getcooper
+    # 主程序和扩展共享密钥用的钥匙串组。keychain-access-groups 需要描述文件，
+    # macOS 的数据保护钥匙串也要靠描述文件里的 App 身份标识，只有 App Group 会报 -34018
+    COOPER_KEYCHAIN_GROUP: $(AppIdentifierPrefix)app.getcooper.shared
+
+packages:
+  S3Kit:
+    path: Packages/S3Kit
+
+targets:
+  Cooper:
+    type: application
+    platform: macOS
+    sources:
+      - App
+      - Shared
+    dependencies:
+      - package: S3Kit
+        product: S3Kit
+      - package: S3Kit
+        product: SyncCore
+      - target: CooperFileProvider
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Cooper
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.utilities
+        CooperAppGroupIdentifier: $(COOPER_APP_GROUP)
+        CooperKeychainAccessGroup: $(COOPER_KEYCHAIN_GROUP)
+    entitlements:
+      path: App/Cooper.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        # 读取「上传」面板里选的文件
+        com.apple.security.files.user-selected.read-write: true
+        # 下载到「下载」文件夹
+        com.apple.security.files.downloads.read-write: true
+        com.apple.security.application-groups:
+          - $(COOPER_APP_GROUP)
+        keychain-access-groups:
+          - $(COOPER_KEYCHAIN_GROUP)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.getcooper.cooper
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  CooperFileProvider:
+    type: app-extension
+    platform: macOS
+    sources:
+      - FileProvider
+      - Shared
+    dependencies:
+      - package: S3Kit
+        product: S3Kit
+      - package: S3Kit
+        product: SyncCore
+    info:
+      path: FileProvider/Info.plist
+      properties:
+        CFBundleDisplayName: Cooper File Provider
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CooperAppGroupIdentifier: $(COOPER_APP_GROUP)
+        CooperKeychainAccessGroup: $(COOPER_KEYCHAIN_GROUP)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.fileprovider-nonui
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).FileProviderExtension
+          NSExtensionFileProviderDocumentGroup: $(COOPER_APP_GROUP)
+          NSExtensionFileProviderSupportsEnumeration: true
+    entitlements:
+      path: FileProvider/CooperFileProvider.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - $(COOPER_APP_GROUP)
+        keychain-access-groups:
+          - $(COOPER_KEYCHAIN_GROUP)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.getcooper.cooper.FileProvider
